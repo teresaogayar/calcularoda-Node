@@ -7,6 +7,8 @@ var data= [];
 const ids= new Map();
 const valor= new Map();
 
+var time = 0;
+
 app.use(express.json());
 //para cuando reciba el html, usamos el urlencoded para interpretarlo
 app.use(express.urlencoded({ extended: true }));
@@ -130,7 +132,20 @@ console.log('8080 is the magic port');
 
 function incrementaTiempo()
 {
-    tiempo++;
-    //console.log("Tiempo pasado: "+tiempo);
+    time++;
+    console.log(time);
+    var tiempoActual = new Date().getTime();
+    const i = ids.keys();
+    console.log(i)
+    while(id=i.next().value){
+        var fechaActual = ids.get(id).getTime();
+        if(fechaActual < (tiempoActual - 60000)){
+            console.log("Han pasado 60 segundos");
+            clean(id);
+            console.log("Se ha eliminado id "+id);
+
+        }
+    }
+        
     
 }
