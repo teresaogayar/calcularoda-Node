@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>            
+    <div>&nbsp;</div>
+    <div class="jumbotron">
+        <div class="display-5"><h1>Introduce los valores</h1></div>
+        <div>&nbsp;</div>
+            <form action="/result" method="POST">
+                <div class="row" >
+                    <label class="col-1">Id: </label>
+                    <!-- Value necesario para volver con el mismo id -->
+                    <input class="col-3" type="text" name="id" value="<%=id%>" required>
+                </div><div>&nbsp;</div>
+                <div class="row">
+                    <label class="col-1">Accion:</label>
+                    <div class="col-3">
+                        <select name="accion" required>
+                        <option value="+">Sumar</option>
+                        <option value="-">Restar</option>
+                        <option value="*">Multiplicar</option>
+                        <option value="/">Dividir</option>
+                        <option value="/">Mostrar</option>
+                        <option value="R">Reset</option>
+                    </select>
+                </div>
+                <div>&nbsp;</div>
+                </div class="row">
+                    <label class="col-1" >Número: </label>
+                    <input class="col-3" type="number" name="numero" value="0" required>
+                    <div>&nbsp;</div>
+                    <!-- Aviso de reseteo -->
+                    <div><%= log %></div>
+                </div>
+                <div>&nbsp;</div>
+                
+                <div class="row" >
+                    
+                        <div class="col-2 offset-md-1">
+                            <button type="submit" >Enviar</button>
+                        </div>        
+                        <div class="col-2">
+                            <button type="reset" >Reset</button>
+                        </div>
+                </div>    <div>&nbsp;</div>
+                
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

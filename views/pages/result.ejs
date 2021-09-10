@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="row">
+    <div class="col-sm-8">
+        <!-- Para retroceder al formulario con el mismo id, hace falta añadirle al id en el formulario el valor -->
+        <a href="/formulario/?id=<%=operacion.id %>">Otra operación</a>
+        <div class="jumbotron">
+            <h2>Hoja de operaciones: </h2>
+            <div>&nbsp;</div>
+            <p><%= log %> = <%=resultadof %></p>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <p>La última operación realizada ha sido una <%=operacion.result%> con el número <%= operacion.numero %> del ID <%= operacion.id%></p>
+            
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="well">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <h3>Resultado final: <%=resultadof %></h3> 
+            
+            
+        </div>
+    </div>
+
+</div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
